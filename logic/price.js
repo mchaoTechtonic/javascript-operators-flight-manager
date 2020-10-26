@@ -1,3 +1,4 @@
+"use strict";
 function Prices() {
     function calculateFinalPrice(basePrice,passengerPercentChange,flightPercentChange) {
         const multiplier1 = (100+passengerPercentChange)/100;

@@ -1,3 +1,4 @@
+'use strict';
 function Util() {
     function calculateTotalDistributedPassengers(seatAssignmentObj) {
         //Object.entries() members are [key,value] pairs;

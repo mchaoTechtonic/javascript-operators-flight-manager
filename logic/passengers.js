@@ -1,3 +1,5 @@
+"use strict";
+
 function Passengers() {
     function checkFlightCapacity(capacity,numbers) {
         let totPassengers = numbers.reduce((acc,curr)=>(acc+curr),0);
