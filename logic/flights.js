@@ -11,7 +11,21 @@ function Flights() {
         return ret;
     }
 
-    return {calculateNumberOfFlights};
+    function checkAircraftRevision(distanceLimit, distancesArray) {
+        let sumOfDistances = distancesArray.reduce((acc,curr)=>(acc+curr),0);
+        console.log(sumOfDistances);
+        if (sumOfDistances<=0.5*distanceLimit) {
+            return "The revision needs to be done within the next 3 months";
+        } else if (sumOfDistances<=.75*distanceLimit) {
+            return "The revision needs to be done within the next 2 months";
+        } else if (sumOfDistances <= distanceLimit) {
+            return "The revision needs to be done within the next month";
+        } else {
+            throw new Error("total distance more than the distance limit");
+        }
+    }
+
+    return {calculateNumberOfFlights, checkAircraftRevision};
 }
 
 module.exports = Flights();
