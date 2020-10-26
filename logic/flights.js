@@ -21,7 +21,7 @@ function Flights() {
         } else if (sumOfDistances <= distanceLimit) {
             return "The revision needs to be done within the next month";
         } else {
-            throw new Error("total distance more than the distance limit");
+            throw new Error("The maximum allowed flight distance should be exceeded");
         }
     }
 
