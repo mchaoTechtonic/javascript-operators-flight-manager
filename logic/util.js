@@ -30,7 +30,18 @@ function Util() {
         },0)
     }
 
-    return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers, checkInput, calculateTotalDistance};
+    function calculateBonusPoints(distancesBusiness,distancesEconomy,businessBonusPercent,
+        economyBonusPercent) {
+        let businessPoints=0;
+        let economyPoints=0;
+        const businessDistance = calculateTotalDistance(distancesBusiness);
+        const economyDistance = calculateTotalDistance(distancesEconomy);
+        businessPoints = businessDistance*businessBonusPercent/100;
+        economyPoints = economyDistance*economyBonusPercent/100;
+        return businessPoints+economyPoints;
+    }
+
+    return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers, checkInput, calculateTotalDistance,calculateBonusPoints};
 }
 
 module.exports = Util();
