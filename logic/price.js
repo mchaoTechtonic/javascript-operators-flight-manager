@@ -13,21 +13,22 @@ function Prices() {
         const regular="regular";
         const economy="economy";
         const business="business";
+        let passengerPercentChange=0;
+        let flightPercentChange=0;
         passengerType=passengerType.toLowerCase();
         flightType=flightType.toLowerCase();
-        let ret = basePrice;
         if (passengerType===vip) {
-            ret*=1.05;
+            passengerPercentChange = 5;
         } else if (passengerType===regular) {
-            ret*=.95;
+            passengerPercentChange = -5;
         }
 
         if (flightType===economy) {
-            ret*=.97;
+            flightPercentChange = -3;
         } else if (flightType===business) {
-            ret*=1.1;
+            flightPercentChange = 10;
         }
-        return Math.round(ret*100)/100;
+        return calculateFinalPrice(basePrice,passengerPercentChange,flightPercentChange);
     }
 
     return {calculateFinalPrice, calculateDefaultFinalPrice};
