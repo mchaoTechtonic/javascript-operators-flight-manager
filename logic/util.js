@@ -20,7 +20,17 @@ function Util() {
 
     }
 
-    return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers, checkInput};
+    function calculateTotalDistance(distances) {
+        return distances.reduce((acc,curr) => {
+            if (curr<0) {
+                return acc;
+            } else {
+                return acc+curr;
+            }
+        },0)
+    }
+
+    return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers, checkInput, calculateTotalDistance};
 }
 
 module.exports = Util();
