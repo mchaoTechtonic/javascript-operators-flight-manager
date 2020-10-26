@@ -11,7 +11,16 @@ function Util() {
         return amountsOfPassengers.reduce((acc,curr)=>(acc+curr),0);
     }
 
-    return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers};
+    function checkInput(input) {
+        if (!input) {
+            throw new Error("The input should not be empty");
+        } else if (isNaN(input)) {
+            throw new Error("The input should be a number");
+        }
+
+    }
+
+    return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers, checkInput};
 }
 
 module.exports = Util();
