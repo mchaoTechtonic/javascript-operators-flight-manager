@@ -13,7 +13,7 @@ function Flights() {
 
     function checkAircraftRevision(distanceLimit, distancesArray) {
         let sumOfDistances = distancesArray.reduce((acc,curr)=>(acc+curr),0);
-        console.log(sumOfDistances);
+        // console.log(sumOfDistances);
         const messagePrefix = "The revision needs to be done within the next ";
         if (sumOfDistances<=0.5*distanceLimit) {
             return messagePrefix+"3 months";
