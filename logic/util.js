@@ -7,7 +7,11 @@ function Util() {
         },0);
     }
 
-    return {calculateTotalDistributedPassengers};
+    function calculateTotalNumberOfPassengers(amountsOfPassengers) {
+        return amountsOfPassengers.reduce((acc,curr)=>(acc+curr),0);
+    }
+
+    return {calculateTotalDistributedPassengers, calculateTotalNumberOfPassengers};
 }
 
 module.exports = Util();
